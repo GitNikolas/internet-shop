@@ -1,0 +1,6 @@
+.footer{
+    min-width: 100%;
+    outline: 2px solid black;
+    height: 100px;
+    flex-shrink: 0;
+  }

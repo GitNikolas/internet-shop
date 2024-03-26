@@ -1,0 +1,12 @@
+.products{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.products_shopping-basket{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin: 0;
+}

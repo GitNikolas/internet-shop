@@ -1,0 +1,68 @@
+.product{
+    display: grid;
+    grid-template-areas:
+    'image title title trash'
+    'image description description description'
+    'image price rating rating'
+    'amount amount amount amount';
+    padding: 10px;
+    background-color: rgb(33, 34, 37);
+    border-radius: 15px;
+    gap:10px;
+}
+
+.product_image{
+    max-width: 200px;
+    max-height: 200px;
+    grid-area: image;
+}
+
+.product_title{
+    grid-area: title;
+    margin: 0;
+}
+
+.product_trash{
+    grid-area: trash;
+    width: 30px;
+    height: 30px;
+    justify-self: flex-end;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: url('../../images/free_icon_trash_can_5761138_negate.png');
+    background-size: cover;
+    background-color: transparent;
+}
+
+.product_description{
+    grid-area: description;
+    margin: 0;
+}
+
+.product_price{
+    grid-area: price;
+    margin: 0 auto;
+}
+
+.product_rating{
+    grid-area: rating;
+    margin: 0 auto;
+}
+
+.product_amount{
+    grid-area: amount;
+    display: flex;
+    margin: 0 auto 0;
+    gap: 50px;
+}
+
+.product_amount-button{
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(226, 226, 226);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

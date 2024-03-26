@@ -1,0 +1,18 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(13,17,23);
+  color:white;
+  word-wrap: break-word;
+}
+
+.content{
+  outline: 1px solid gray;
+  min-width: 100%;
+  flex:1;
+}
+
+.list-style{
+  list-style: none;
+}
