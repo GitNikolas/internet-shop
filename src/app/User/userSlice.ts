@@ -9,18 +9,19 @@ export interface UserState {
 
 const initialState: UserState = {
     value: {} as UserType,
-    status: 'idle'
+    status: 'loading'
 }
 
 export const getUser = createAsyncThunk(
     'user/getUser',
     async () => {
       const response = await getMyUser();
-      return response?.data;
+      const data = await response.json();
+      return data;
     }
   );
 
-export const productsSlice = createSlice({
+export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers:{
@@ -33,8 +34,9 @@ export const productsSlice = createSlice({
           })
           .addCase(getUser.fulfilled, (state, action) => {
             state.status = 'idle';
-            action.payload = action.payload.map((item:UserType) => {return {...item, amount:1}})
             state.value = action.payload;
+            state.value.isAuthorized = true;
+            console.log(state.value);
           })
           .addCase(getUser.rejected, (state) => {
             state.status = 'failed';
@@ -42,6 +44,6 @@ export const productsSlice = createSlice({
       },
 })
 
-export const {  } = productsSlice.actions;
+export const {  } = userSlice.actions;
 
-export default productsSlice.reducer;
+export default userSlice.reducer;

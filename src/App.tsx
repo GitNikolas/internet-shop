@@ -9,6 +9,7 @@ import Registration from './components/Registration/Registration';
 import Login from './components/Login/Login';
 import { Profile } from './components/Profile';
 import Catalog from './components/Catalog/Catalog';
+import { ProtectedRoute } from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -41,10 +42,20 @@ function App() {
           element={<Catalog />}
           />
 
-          <Route
+          <Route 
+          path='/profile'
+          element={
+            <ProtectedRoute 
+            component={Profile}
+            />
+          }
+
+          />
+
+          {/* <Route
           path='/profile'
           element={<Profile />}
-          />
+          /> */}
 
         </Routes>
       </div>

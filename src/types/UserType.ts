@@ -3,4 +3,5 @@ export interface UserType {
     password: string;
     name: string;
     surname: string;
+    isAuthorized: boolean;
 }
