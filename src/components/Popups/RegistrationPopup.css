@@ -1,0 +1,70 @@
+@keyframes opacity {
+    from{
+        opacity: 0;
+    } to {
+        opacity: 100%;
+    }
+}
+
+.registration-popup {
+    display: none;
+    color: #000;
+    font-size: 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.registration-popup_open {
+    display: flex;
+}
+
+.registration-popup__overlay {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.registration-popup__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 350px;
+    height: 260px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.registration-popup__content_open{
+    animation: opacity .5s linear;
+}
+
+.registration-popup__close-button{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right:0;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(224, 224, 224);
+    font-size: 20px;
+    margin: 10px;
+}
+
+.registration-popup__message{
+    align-self: center;
+}

@@ -1,0 +1,15 @@
+.menu {
+    display: flex;
+    box-sizing: border-box;
+    gap: 20px;
+    padding: 0;
+}
+
+.menu__link {
+    color: white;
+    text-decoration: none;
+}
+
+.menu__link:hover {
+    color: gray;
+}

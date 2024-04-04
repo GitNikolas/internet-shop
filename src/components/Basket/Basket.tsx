@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import './Products.css';
+import './Basket.css';
 import Product from '../Product/Product';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { fetchProducts } from './productsSlice';
 import TotalCost from '../TotalCost/TotalCost';
 
-function Products() {
+function Basket() {
 
     const products = useAppSelector(state => state.products.value);
 
@@ -16,8 +16,8 @@ function Products() {
     }, [dispatch])
 
   return (
-    <section className='products'>
-        <ul className='products_shopping-basket list-style'>
+    <section className='basket'>
+        <ul className='basket__list list-style'>
             {products?.map(product => 
             (<Product
             category = {product.category}
@@ -36,4 +36,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Basket;

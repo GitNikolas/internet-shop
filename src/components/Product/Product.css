@@ -11,18 +11,18 @@
     gap:10px;
 }
 
-.product_image{
+.product__image{
     max-width: 200px;
     max-height: 200px;
     grid-area: image;
 }
 
-.product_title{
+.product__title{
     grid-area: title;
     margin: 0;
 }
 
-.product_trash{
+.product__trash{
     grid-area: trash;
     width: 30px;
     height: 30px;
@@ -35,29 +35,29 @@
     background-color: transparent;
 }
 
-.product_description{
+.product__description{
     grid-area: description;
     margin: 0;
 }
 
-.product_price{
+.product__price{
     grid-area: price;
     margin: 0 auto;
 }
 
-.product_rating{
+.product__rating{
     grid-area: rating;
     margin: 0 auto;
 }
 
-.product_amount{
+.product__amount{
     grid-area: amount;
     display: flex;
     margin: 0 auto 0;
     gap: 50px;
 }
 
-.product_amount-button{
+.product__amount-button{
     font-size: 30px;
     width: 50px;
     height: 50px;

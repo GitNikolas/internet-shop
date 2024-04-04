@@ -1,0 +1,32 @@
+.profile-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-form__title{
+    width: 350px;
+    text-align: center;
+}
+
+.profile-form__input{
+    height: 30px;
+    width: 350px;
+    border: none;
+    border-bottom:1px solid gray ;
+    background-color: transparent;
+    color: white;
+}
+
+.profile__submit-button{
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(56, 56, 197);
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    margin: 35px auto 0;
+    cursor: pointer;
+}

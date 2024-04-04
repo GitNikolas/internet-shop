@@ -1,3 +1,13 @@
 .header {
-    height: 100px;
-  }
+  display: flex;
+  height: 100px;
+  align-items: center;
+}
+
+.header__logo{
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 50%;
+}
