@@ -1,8 +1,4 @@
-# Тестовое задание для команды VK-маркет
+# Internet Shop 
+Internet Shop - это Pet-проект, представляющий из себя подобие маркетплейса
 
-## Проект представляет из себя демо-версию работы продуктовой корзины.
-
-Технологии: React, Redux, TypeScript
----
-
-Посмотреть демо-версию проекта можно здесь: https://gitnikolas.github.io/vktest-market/
+## Технологии: React, Redux, TypeScript, Express, MongoDB
