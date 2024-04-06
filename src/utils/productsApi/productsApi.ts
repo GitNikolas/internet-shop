@@ -19,8 +19,6 @@ export async function getProducts() {
         })
         if(response.ok) {
             let data = await response.json();
-            data = data.slice(0,5);
-            // убрать slice когда доделаю корзину
             return { data };
         } else {
             throw new Error('Упс, что-то пошло не так')
