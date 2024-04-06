@@ -9,10 +9,6 @@ export const ProtectedRoute: FC<ProtectedRouteProps> = ({ component: Component, 
 	const dispatch = useAppDispatch();
 	const {status, value: user} = useAppSelector(state => state.user);
 
-	useMemo(() => {
-		dispatch(getUser());
-	}, [])
-
 	return (
 		status === 'loading' ?
 		<p>Загрузка</p> :

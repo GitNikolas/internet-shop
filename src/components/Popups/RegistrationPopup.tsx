@@ -16,6 +16,7 @@ function RegistrationPopup({ message, isOpen, setIsOpen, isLoading }: Registrati
   const isPopupContentOpen = isOpen ? 'registration-popup__content_open' : '';
 
   function popupClose(event:any) {
+    event.preventDefault();
     event.stopPropagation();
     setIsOpen(false);
   }

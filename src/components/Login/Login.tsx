@@ -18,11 +18,8 @@ function Login() {
     event.preventDefault();
     let response = await login(values);
     if(response.ok) {
-      // поменять состояние isLogin на true
-      // let res = await getUser();
-      // console.log(await res.json());
       dispatch(getUser())
-      // navigate('/profile');
+      navigate('/profile');
     }
   }
 

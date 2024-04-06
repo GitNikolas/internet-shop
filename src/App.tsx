@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import './App.css';
@@ -10,8 +10,12 @@ import Login from './components/Login/Login';
 import { Profile } from './components/Profile';
 import Catalog from './components/Catalog/Catalog';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { UseAuthorization } from './hooks/UseForm/UseAuthorization';
 
 function App() {
+
+  UseAuthorization();
+
   return (
     <div className="app">
       <Header/>
@@ -51,11 +55,6 @@ function App() {
           }
 
           />
-
-          {/* <Route
-          path='/profile'
-          element={<Profile />}
-          /> */}
 
         </Routes>
       </div>

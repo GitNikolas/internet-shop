@@ -1,8 +1,14 @@
 .profile-form{
     display: flex;
     flex-direction: column;
+}
+
+.profile-fieldset{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
+    border: none;
+    padding: 0;
 }
 
 .profile-form__title{
@@ -17,10 +23,18 @@
     border-bottom:1px solid gray ;
     background-color: transparent;
     color: white;
+    margin: 14px 0 0;
+}
+
+.profile-form__error{
+    margin: 0;
+    height: 18px;
+    color: red;
 }
 
 .profile__submit-button{
     height: 40px;
+    width: 200px;
     border: none;
     border-radius: 5px;
     background-color: rgb(56, 56, 197);
@@ -29,4 +43,13 @@
     padding: 10px;
     margin: 35px auto 0;
     cursor: pointer;
+}
+
+.profile__submit-button:nth-of-type(2){
+    margin: 10px auto 0;
+}
+
+.profile__submit-button:disabled{
+    background-color: rgb(169, 169, 252);
+    cursor: not-allowed;
 }

@@ -44,5 +44,5 @@ export function UseForm() {
     }
 
 
-    return {values, errors, formIsValid, setValues, setErrors, handleChange, checkValidity};
+    return {values, errors, formIsValid, setFormIsValid, setValues, setErrors, handleChange, checkValidity};
 }

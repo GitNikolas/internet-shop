@@ -67,4 +67,6 @@
 
 .registration-popup__message{
     align-self: center;
+    padding: 5px;
+    margin: 0;
 }

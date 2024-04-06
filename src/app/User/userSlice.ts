@@ -25,6 +25,9 @@ export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers:{
+      clearUserValue: (state) => {
+        state.value = { name:'', email:'', password:'', surname:'', isAuthorized:false };
+      }
       
     },
     extraReducers: (builder) => {
@@ -36,7 +39,6 @@ export const userSlice = createSlice({
             state.status = 'idle';
             state.value = action.payload;
             state.value.isAuthorized = true;
-            console.log(state.value);
           })
           .addCase(getUser.rejected, (state) => {
             state.status = 'failed';
@@ -44,6 +46,6 @@ export const userSlice = createSlice({
       },
 })
 
-export const {  } = userSlice.actions;
+export const { clearUserValue } = userSlice.actions;
 
 export default userSlice.reducer;

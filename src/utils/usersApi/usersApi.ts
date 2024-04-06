@@ -68,7 +68,7 @@ export async function getUser() {
   }
 }
 
-export async function patchUser({ name, email }: userTypes) {
+export async function patchUser({ name, surname }: userTypes) {
   try{
     let response = await fetch(`${baseUrl}/users/me`, {
       method:'PATCH',
@@ -76,7 +76,7 @@ export async function patchUser({ name, email }: userTypes) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ name, email }),
+      body: JSON.stringify({ name, surname }),
     });
     if(!response.ok){
       let message = await response.json();
