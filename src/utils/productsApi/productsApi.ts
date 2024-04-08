@@ -28,27 +28,32 @@ export async function getProducts() {
     }
 }
 
-export async function postFilm({ id, title, price, description, category,
-    image, rating, amount }: productTypes) {
-    try{
-      let response = await fetch(`${dataBaseUrl}/products`, {
-        method:'POST',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ id, title, price, description, category,
-            image, rating, amount })
-      });
-       if (!response.ok){
-        throw new Error('Произошла ошибка, проверьте корректность введённых данных');
-      }
-      return response;
-    } catch(err: any) {
-      console.error(err);
-      return err.message;
-    }
-  }
+export async function getCategories() {
+  const res = await fetch('https://fakestoreapi.com/products/categories')
+  return await res.json()
+}
+
+// export async function postFilm({ id, title, price, description, category,
+//     image, rating, amount }: productTypes) {
+//     try{
+//       let response = await fetch(`${dataBaseUrl}/products`, {
+//         method:'POST',
+//         credentials: 'include',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ id, title, price, description, category,
+//             image, rating, amount })
+//       });
+//        if (!response.ok){
+//         throw new Error('Произошла ошибка, проверьте корректность введённых данных');
+//       }
+//       return response;
+//     } catch(err: any) {
+//       console.error(err);
+//       return err.message;
+//     }
+//   }
 
   export async function deleteProduct(productId:number) {
     try{
