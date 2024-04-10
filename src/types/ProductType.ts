@@ -6,8 +6,8 @@ export interface ProductType {
     price: number;
     rating: Rating;
     title: string;
-    amount?: number
-    data?: []
+    amount: number;
+    productData:ProductType;
 }
 
 interface Rating {

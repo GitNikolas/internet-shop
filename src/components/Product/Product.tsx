@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ProductType } from '../../types/ProductType';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { productsIncrement, productsDecrement, productDelete } from '../Basket/productsSlice';
+import { productsIncrement, productsDecrement, productDelete, delProduct } from '../Basket/productsSlice';
 import './Product.css';
 
 function Product({ description,image,price,rating,title,id,amount}:ProductType) {
@@ -21,7 +21,7 @@ function Product({ description,image,price,rating,title,id,amount}:ProductType) 
   }
 
   function deleteProduct() {
-    dispatch(productDelete(id));
+    dispatch(delProduct(id));
   }
 
   const totalPrice = Number.isInteger(price * 90) ? price * 90 : (price * 90).toFixed(2);

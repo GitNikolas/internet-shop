@@ -1,5 +1,5 @@
 const fakeStoreUrl = 'https://fakestoreapi.com/products';
-const dataBaseUrl = 'http://localhost:3001/products';
+const dataBaseUrl = 'http://localhost:3001';
 
 interface productTypes{
     id: Number;
@@ -33,35 +33,35 @@ export async function getCategories() {
   return await res.json()
 }
 
-// export async function postFilm({ id, title, price, description, category,
-//     image, rating, amount }: productTypes) {
-//     try{
-//       let response = await fetch(`${dataBaseUrl}/products`, {
-//         method:'POST',
-//         credentials: 'include',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({ id, title, price, description, category,
-//             image, rating, amount })
-//       });
-//        if (!response.ok){
-//         throw new Error('Произошла ошибка, проверьте корректность введённых данных');
-//       }
-//       return response;
-//     } catch(err: any) {
-//       console.error(err);
-//       return err.message;
-//     }
-//   }
+export async function postProduct({ id, title, price, description, category,
+    image, rating }: productTypes) {
+    try{
+      let response = await fetch(`${dataBaseUrl}/products`, {
+        method:'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id, title, price, description, category,
+            image, rating, amount: 1 })
+      });
+       if (!response.ok){
+        throw new Error('Произошла ошибка, проверьте корректность введённых данных');
+      }
+      return await response.json();
+    } catch(err: any) {
+      console.error(err);
+      return err.message;
+    }
+  }
 
   export async function deleteProduct(productId:number) {
     try{
-      let response = await fetch(`${dataBaseUrl}/movies/${productId}`, {
+      let response = await fetch(`${dataBaseUrl}/products/${productId}`, {
         method:'DELETE',
         credentials: 'include',
       });
-      return response;
+      return await response.json();
     } catch(err: any) {
       console.error(err);
       return err.message;

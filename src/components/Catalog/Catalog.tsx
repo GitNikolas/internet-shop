@@ -59,6 +59,8 @@ function Catalog() {
         price={product.price}
         rating={product.rating}
         title={product.title}
+        amount={product.amount}
+        productData={product}
         />)}
       </ul>
 

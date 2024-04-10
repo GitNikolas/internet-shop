@@ -13,10 +13,6 @@ function Main() {
     setProducts(res?.data);
   }, [])
 
-  useMemo(async() => {
-    console.log(products);
-  }, [products])
-
   return (
     <main className="main">
       <ul className="main__product-list list-style">
@@ -30,6 +26,7 @@ function Main() {
             rating={product.rating}
             title={product.title}    
             id={product.id}
+            productData={product}
             amount={product.amount}
             ></ProductMini>))}
       </ul>

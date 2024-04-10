@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { ProductType } from '../../types/ProductType';
-import { getProducts } from '../../utils/productsApi/productsApi';
+import { getUserProducts } from '../../utils/productsApi/productsApi';
+import { deleteProduct, postProduct } from '../../utils/productsApi/productsApi';
+
 
 export interface ProductsState {
     value: ProductType[];
@@ -12,11 +14,27 @@ const initialState: ProductsState = {
     status: 'idle'
 }
 
-export const fetchProducts = createAsyncThunk(
+  export const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
     async () => {
-      const response = await getProducts();
-      return response?.data;
+      const response = await getUserProducts();
+      return response;
+    }
+  );
+
+  export const pstProduct = createAsyncThunk(
+    'products/pstProduct',
+    async (data:ProductType) => {
+      const response = await postProduct(data);
+      return response;
+    }
+  );
+
+  export const delProduct = createAsyncThunk(
+    'products/delProduct',
+    async (id:number) => {
+      const response = await deleteProduct(id);
+      return response;
     }
   );
 
@@ -44,7 +62,8 @@ export const productsSlice = createSlice({
         state.value = state.value.filter(item => item.id != action.payload);
       },
     },
-    extraReducers: (builder) => {
+    extraReducers: 
+    (builder) => {
         builder
           .addCase(fetchProducts.pending, (state) => {
             state.status = 'loading';
@@ -55,6 +74,28 @@ export const productsSlice = createSlice({
             state.value = action.payload;
           })
           .addCase(fetchProducts.rejected, (state) => {
+            state.status = 'failed';
+          })
+
+          .addCase(delProduct.pending, (state) => {
+            state.status = 'loading';
+          })
+          .addCase(delProduct.fulfilled, (state, action) => {
+            state.status = 'idle';
+            state.value = state.value.filter(product => product.id !== action.payload.id);
+          })
+          .addCase(delProduct.rejected, (state) => {
+            state.status = 'failed';
+          })
+
+          .addCase(pstProduct.pending, (state) => {
+            state.status = 'loading';
+          })
+          .addCase(pstProduct.fulfilled, (state, action) => {
+            state.status = 'idle';
+            state.value.push(action.payload);
+          })
+          .addCase(pstProduct.rejected, (state) => {
             state.status = 'failed';
           });
       },

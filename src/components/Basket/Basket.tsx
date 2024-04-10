@@ -29,6 +29,7 @@ function Basket() {
             title={product.title}    
             id={product.id}
             amount={product.amount}
+            productData={product}
             ></Product>))}
         </ul>
         <TotalCost/>
