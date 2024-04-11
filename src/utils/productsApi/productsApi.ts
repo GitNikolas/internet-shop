@@ -69,11 +69,19 @@ export async function postProduct({ id, title, price, description, category,
   }
 
   export async function getUserProducts() {
-      let response = await fetch(`${dataBaseUrl}/products`, {
-        method:'GET',
-        credentials: 'include',
-      });
-
-      return response;
-  }
+      try{
+        let response = await fetch(`${dataBaseUrl}/products`, {
+          method:'GET',
+          credentials: 'include',
+        });
+        if(!response.ok){
+          throw new Error(response.statusText)
+        }
+        return response;
+      }
+      catch(err:any){
+        console.error(err.message);
+        return err.message
+      }
+    }
   

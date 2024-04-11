@@ -23,6 +23,7 @@ const initialState: ProductsState = {
         const response = await getUserProducts();
         if(!response.ok){
           throw new Error(response.statusText);
+
         }
         return await response.json();
       } catch(err:any) {
@@ -86,7 +87,6 @@ export const productsSlice = createSlice({
           .addCase(fetchProducts.rejected, (state,action) => {
             state.status = 'failed';
             state.error = action.payload;
-            console.log(action.payload);
           })
 
           .addCase(delProduct.pending, (state) => {

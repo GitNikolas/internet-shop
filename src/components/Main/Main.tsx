@@ -3,7 +3,7 @@ import { getProducts } from '../../utils/productsApi/productsApi';
 import { ProductMini } from '../ProductMini';
 import { ProductType } from '../../types/ProductType';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { fetchProducts,pstProduct,delProduct } from '../Basket/productsSlice';
+import { fetchProducts,pstProduct,delProduct } from '../../app/Product/productsSlice';
 import './Main.css';
 
 function Main() {

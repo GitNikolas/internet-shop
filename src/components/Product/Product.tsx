@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ProductType } from '../../types/ProductType';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { productsIncrement, productsDecrement, productDelete, delProduct } from '../Basket/productsSlice';
+import { productsIncrement, productsDecrement, productDelete, delProduct } from '../../app/Product/productsSlice';
 import './Product.css';
 
 function Product({ description,image,price,rating,title,id,amount}:ProductType) {

@@ -3,7 +3,7 @@ import { ProductType } from '../../types/ProductType';
 import './ProductMini.css';
 import { postProduct, deleteProduct } from '../../utils/productsApi/productsApi';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { fetchProducts,pstProduct,delProduct } from '../Basket/productsSlice';
+import { fetchProducts,pstProduct,delProduct } from '../../app/Product/productsSlice';
 
 export const ProductMini: FC<ProductType> = ({ description,image,price,rating,title,id,productData }) => {
     

@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import './Basket.css';
 import Product from '../Product/Product';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { fetchProducts } from './productsSlice';
+import { fetchProducts } from '../../app/Product/productsSlice';
 import TotalCost from '../TotalCost/TotalCost';
 
 function Basket() {
