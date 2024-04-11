@@ -5,6 +5,7 @@ import { postProduct, deleteProduct } from '../../utils/productsApi/productsApi'
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { fetchProducts,pstProduct,delProduct } from '../../app/Product/productsSlice';
 import { ProductImagePopup } from '../Popups/ProductImagePopup';
+import { Link } from 'react-router-dom';
 
 export const ProductMini: FC<ProductType> = ({ description,image,price,rating,title,id,productData }) => {
     
@@ -38,7 +39,7 @@ export const ProductMini: FC<ProductType> = ({ description,image,price,rating,ti
 
 	return <li className='product-mini'>
 		<img className='product-mini__image' src={image} alt={title} onClick={toggleImageOpen}/>
-		<p className='product-mini__title'>{title}</p>
+		<Link to={`/product/${id}`} className='product-mini__title' target='_blank'>{`${title} ↗`}</Link>
 		<p className='product-mini__price'>Цена: {totalPrice} руб. Рейтинг: {rating.rate}</p>
 		{!inBusket && <button className='product-mini__add-button'
 		onClick={handlePostProduct}

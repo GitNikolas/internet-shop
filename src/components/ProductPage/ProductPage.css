@@ -1,0 +1,28 @@
+.product-page{
+    display: flex;
+}
+
+.product-page__image{
+    margin: auto;
+    max-height: 500px;
+}
+
+.product-page__content{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.product-page__add-button{
+    font-size: 18px;
+    height: 40px;
+    width: 100%;
+    background-color: rgb(95, 78, 252);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.product-page__add-button:hover{
+    background-color: rgb(160, 150, 255);
+}

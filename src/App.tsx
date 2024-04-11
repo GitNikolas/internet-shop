@@ -11,6 +11,7 @@ import { Profile } from './components/Profile';
 import Catalog from './components/Catalog/Catalog';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { UseAuthorization } from './hooks/UseForm/UseAuthorization';
+import { ProductPage } from './components/ProductPage';
 
 function App() {
 
@@ -53,7 +54,11 @@ function App() {
             component={Profile}
             />
           }
+          />
 
+          <Route
+          path='/product/:id'
+          element={<ProductPage />}
           />
 
         </Routes>

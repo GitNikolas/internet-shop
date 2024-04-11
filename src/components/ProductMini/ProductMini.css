@@ -18,6 +18,12 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    text-decoration: none;
+    color: white;
+}
+
+.product-mini__title:hover{
+    color: rgb(149, 149, 149);
 }
 
 .product-mini__price{
