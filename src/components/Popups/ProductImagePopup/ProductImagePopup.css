@@ -23,12 +23,12 @@
 
 .product-image-popup__content{
     position: relative;
-    margin: auto;
     z-index: 99;
+    margin: auto;
 }
 
 .product-image-popup__image{
-    max-height: 90%;
+    max-height: 700px;
 }
 
 .product-image-popup__close-button{
