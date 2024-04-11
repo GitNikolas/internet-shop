@@ -27,6 +27,7 @@
 .product-mini__image{
     max-width: 70%;
     max-height: 70%;
+    cursor: pointer;
 }
 
 .product-mini__add-button{

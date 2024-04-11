@@ -4,13 +4,14 @@ import './ProductMini.css';
 import { postProduct, deleteProduct } from '../../utils/productsApi/productsApi';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { fetchProducts,pstProduct,delProduct } from '../../app/Product/productsSlice';
+import { ProductImagePopup } from '../Popups/ProductImagePopup';
 
 export const ProductMini: FC<ProductType> = ({ description,image,price,rating,title,id,productData }) => {
     
 	const products = useAppSelector(state => state.products.value);
 	const dispatch = useAppDispatch();
-
 	const totalPrice = Number.isInteger(price * 90) ? price * 90 : (price * 90).toFixed(2);
+	const [imageIsOpen, setImageIsOpen] = useState(false);
 
 	async function handlePostProduct() {
 		dispatch(pstProduct(productData));
@@ -18,6 +19,10 @@ export const ProductMini: FC<ProductType> = ({ description,image,price,rating,ti
 
 	async function handleDeleteProduct() {
 		dispatch(delProduct(id));
+	}
+
+	function toggleImageOpen() {
+		setImageIsOpen(!imageIsOpen);
 	}
 
 	const [inBusket, setInBusket] = useState(false);
@@ -32,7 +37,7 @@ export const ProductMini: FC<ProductType> = ({ description,image,price,rating,ti
 	}, [products])
 
 	return <li className='product-mini'>
-		<img className='product-mini__image' src={image} alt={title}/>
+		<img className='product-mini__image' src={image} alt={title} onClick={toggleImageOpen}/>
 		<p className='product-mini__title'>{title}</p>
 		<p className='product-mini__price'>Цена: {totalPrice} руб. Рейтинг: {rating.rate}</p>
 		{!inBusket && <button className='product-mini__add-button'
@@ -41,5 +46,6 @@ export const ProductMini: FC<ProductType> = ({ description,image,price,rating,ti
 		{inBusket &&<button className='product-mini__add-button'
 		onClick={handleDeleteProduct}
 		>Удалить из корзины</button>}
+		<ProductImagePopup image={image} openImage={imageIsOpen} toggleImageOpen={toggleImageOpen}/>
 	</li>;
 };

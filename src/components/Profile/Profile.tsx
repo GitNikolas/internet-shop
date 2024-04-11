@@ -4,7 +4,7 @@ import { UseForm } from '../../hooks/UseForm/UseForm';
 import './Profile.css';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { patchUser } from '../../utils/usersApi/usersApi';
-import RegistrationPopup from '../Popups/RegistrationPopup';
+import RegistrationPopup from '../Popups/RegistrationPopup/RegistrationPopup';
 import { UsePopup } from '../../hooks/UseForm/UsePopup';
 
 export const Profile: FC<ProfileProps> = (props) => {

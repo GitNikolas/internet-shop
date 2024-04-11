@@ -3,7 +3,7 @@ import './Registration.css';
 import { Link, useLocation, Navigate } from 'react-router-dom';
 import { UseForm } from '../../hooks/UseForm/UseForm';
 import { register } from '../../utils/usersApi/usersApi';
-import RegistrationPopup from '../Popups/RegistrationPopup';
+import RegistrationPopup from '../Popups/RegistrationPopup/RegistrationPopup';
 
 function Registration() {
   const {values, errors, formIsValid, setValues, setErrors, handleChange, checkValidity} = UseForm();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './RegistrationPopup.css';
-import Loader from '../UI/Spinner/Loader';
+import Loader from '../../UI/Spinner/Loader';
 
 interface RegistrationPopupProps {
   message: string;
