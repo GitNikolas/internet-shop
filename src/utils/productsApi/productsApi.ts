@@ -69,18 +69,11 @@ export async function postProduct({ id, title, price, description, category,
   }
 
   export async function getUserProducts() {
-    try{
       let response = await fetch(`${dataBaseUrl}/products`, {
         method:'GET',
         credentials: 'include',
       });
-      if(!response.ok){
-        throw new Error('Необходима авторизация');
-      };
-      return response.json();
-    } catch(err: any) {
-      console.error(err);
-      return err.message;
-    }
+
+      return response;
   }
   

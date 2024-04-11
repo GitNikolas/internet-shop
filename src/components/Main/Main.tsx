@@ -1,16 +1,23 @@
-import React, {useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import { getProducts } from '../../utils/productsApi/productsApi';
 import { ProductMini } from '../ProductMini';
 import { ProductType } from '../../types/ProductType';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { fetchProducts,pstProduct,delProduct } from '../Basket/productsSlice';
 import './Main.css';
 
 function Main() {
 
   const [products, setProducts] = useState<ProductType[]>([]);
+  const dispatch = useAppDispatch();
 
   useMemo(async() => {
     let res = await getProducts();
     setProducts(res?.data);
+  }, [])
+
+  useMemo(async() => {
+    dispatch(fetchProducts());
   }, [])
 
   return (

@@ -7,18 +7,27 @@ import { deleteProduct, postProduct } from '../../utils/productsApi/productsApi'
 export interface ProductsState {
     value: ProductType[];
     status: 'idle' | 'loading' | 'failed';
+    error: any;
 }
 
 const initialState: ProductsState = {
     value: [],
-    status: 'idle'
+    status: 'idle',
+    error: '',
 }
 
   export const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
-    async () => {
-      const response = await getUserProducts();
-      return response;
+    async (_, { rejectWithValue }) => {
+      try {
+        const response = await getUserProducts();
+        if(!response.ok){
+          throw new Error(response.statusText);
+        }
+        return await response.json();
+      } catch(err:any) {
+        return rejectWithValue(err.message);
+      }
     }
   );
 
@@ -67,14 +76,17 @@ export const productsSlice = createSlice({
         builder
           .addCase(fetchProducts.pending, (state) => {
             state.status = 'loading';
+            state.error = '';
           })
           .addCase(fetchProducts.fulfilled, (state, action) => {
             state.status = 'idle';
-            action.payload = action.payload.map((item:ProductType) => {return {...item, amount:1}})
+            state.error = '';
             state.value = action.payload;
           })
-          .addCase(fetchProducts.rejected, (state) => {
+          .addCase(fetchProducts.rejected, (state,action) => {
             state.status = 'failed';
+            state.error = action.payload;
+            console.log(action.payload);
           })
 
           .addCase(delProduct.pending, (state) => {

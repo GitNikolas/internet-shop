@@ -10,10 +10,6 @@ export const ProductMini: FC<ProductType> = ({ description,image,price,rating,ti
 	const products = useAppSelector(state => state.products.value);
 	const dispatch = useAppDispatch();
 
-	useMemo(() => {
-		dispatch(fetchProducts());
-	}, [])
-
 	const totalPrice = Number.isInteger(price * 90) ? price * 90 : (price * 90).toFixed(2);
 
 	async function handlePostProduct() {
@@ -27,13 +23,12 @@ export const ProductMini: FC<ProductType> = ({ description,image,price,rating,ti
 	const [inBusket, setInBusket] = useState(false);
 
 	function checkIsInBusket(){
-		const check = products.some(item => item.id === id);
+		const check = products?.some(item => item.id === id);
 		setInBusket(check);
 	}
 
 	useMemo(() => {
 		checkIsInBusket();
-		// console.log(products)
 	}, [products])
 
 	return <li className='product-mini'>
