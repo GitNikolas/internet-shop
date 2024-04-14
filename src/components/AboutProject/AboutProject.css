@@ -1,0 +1,22 @@
+.about-project{
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid white;
+    margin: 100px;
+    padding: 10px;
+}
+
+.about-project__image{
+    width: 200px;
+    height: 250px;
+    outline: 1px solid white;
+}
+
+.about-project__inform-table{
+    display: flex;
+    flex-direction: row;
+}
+
+.about-project__text{
+    padding: 10px
+}

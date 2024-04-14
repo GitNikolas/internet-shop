@@ -1,0 +1,32 @@
+.mobile-menu__navigation{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    padding: 20px;
+    background-color: rgb(54, 54, 54);
+    box-sizing: border-box;
+    transform: translate(100%);
+    transition: transform .2s linear;
+}
+
+.mobile-menu__navigation_open{
+    transform: translate(0);
+    transition: transform .2s linear;
+    overflow-y: scroll;
+}
+
+.mobile-menu__overlay{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 425px) {
+    .mobile-menu__navigation{
+        width: 100%;
+    }
+}

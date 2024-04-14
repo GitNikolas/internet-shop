@@ -29,3 +29,20 @@
 .menu__leave-button:hover {
     color: gray;
 }
+
+.menu__link__current{
+    color: gray;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu__link__current{
+        color: white;
+        padding-bottom: 2px;
+        border-bottom: 2px solid rgb(0, 127, 169);
+    }
+}
