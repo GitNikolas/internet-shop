@@ -22,7 +22,7 @@ function Menu() {
   if(user.isAuthorized) {
     return (
       <menu className="menu">
-        <Link to='/' className={`menu__link ${location.pathname === '/' && 'menu__link__current'}`}>На главную</Link>
+        <Link to='/' className={`menu__link ${location.pathname === '/' && 'menu__link__current'}`}>Главная</Link>
         <Link to='/catalog' className={`menu__link ${location.pathname === '/catalog' && 'menu__link__current'}`}>Каталог</Link>
         <Link to='/basket' className={`menu__link ${location.pathname === '/basket' && 'menu__link__current'}`}>Корзина</Link>
         <Link to='/profile' className={`menu__link ${location.pathname === '/profile' && 'menu__link__current'}`}>Профиль</Link>
@@ -33,7 +33,7 @@ function Menu() {
   } else {
     return (
       <menu className="menu">
-        <Link to='/' className={`menu__link ${location.pathname === '/' && 'menu__link__current'}`}>На главную</Link>
+        <Link to='/' className={`menu__link ${location.pathname === '/' && 'menu__link__current'}`}>Главная</Link>
         <Link to='/catalog' className={`menu__link ${location.pathname === '/catalog' && 'menu__link__current'}`}>Каталог</Link>
         <Link to='/basket' className={`menu__link ${location.pathname === '/basket' && 'menu__link__current'}`}>Корзина</Link>
         <Link to='/sign-up' className={`menu__link ${location.pathname === '/sign-up' && 'menu__link__current'}`}>Регистрация</Link>

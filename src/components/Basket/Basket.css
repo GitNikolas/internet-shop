@@ -10,3 +10,13 @@
     padding: 10px;
     margin: 0;
 }
+
+@media screen and (max-width:768px) {
+    .basket{
+        grid-template-columns: 1fr;
+    }
+
+    .basket__list{
+        order: 2;
+    }
+}

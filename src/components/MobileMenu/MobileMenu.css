@@ -1,3 +1,7 @@
+.mobile-menu{
+    z-index: 999;
+}
+
 .mobile-menu__navigation{
     position: fixed;
     top: 0;

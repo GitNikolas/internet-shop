@@ -9,6 +9,7 @@
     background-color: rgb(33, 34, 37);
     border-radius: 15px;
     gap:10px;
+    box-sizing: border-box;
 }
 
 .product__image{
@@ -58,6 +59,9 @@
 }
 
 .product__amount-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
     width: 50px;
     height: 50px;
@@ -65,4 +69,30 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media screen and (max-width:455px) {
+    .product{
+        grid-template-areas:
+        'image title title trash'
+        'image price price price'
+        'image rating rating rating'
+        'image amount amount amount'
+        'description description description description';
+        gap:5px;
+    }
+
+    .product__price{
+        margin: 0;
+    }
+
+    .product__amount{
+        gap: 20px;  
+        align-items: center;
+    }
+
+    .product__amount-button{
+        width: 40px;
+        height: 30px;
+    }
 }
