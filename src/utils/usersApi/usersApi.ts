@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3001';
+const baseUrl = 'http://localhost:3002';
 
 interface userTypes{
     name: String;
