@@ -1,15 +1,14 @@
 .about-project{
     display: flex;
     flex-direction: column;
-    outline: 1px solid white;
-    margin: 100px;
+    outline: 1px solid gray;
+    margin: 10px;
     padding: 10px;
 }
 
 .about-project__image{
-    width: 200px;
-    height: 250px;
-    outline: 1px solid white;
+    max-width: 200px;
+    max-height: 250px;
 }
 
 .about-project__inform-table{
@@ -17,6 +16,40 @@
     flex-direction: row;
 }
 
+.about-project__textarea{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px;
+    gap:10px;
+}
+
+.about-project__list{
+    margin: 0;
+}
+
 .about-project__text{
-    padding: 10px
+    margin: 0;
+}
+
+.about-project__title{
+    margin: 0;
+}
+
+.about-project__link{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-width:560px) {
+    .about-project__inform-table{
+    flex-wrap: wrap;
+    }
+
+    .about-project__image{
+        order: 1;
+    }
 }
