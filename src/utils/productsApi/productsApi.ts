@@ -1,5 +1,5 @@
 const fakeStoreUrl = 'https://fakestoreapi.com/products';
-const dataBaseUrl = 'http://localhost:3001';
+const dataBaseUrl = 'https://api.internetshoppet.ru';
 
 interface productTypes{
     id: Number;
