@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3003';
+const baseUrl = 'https://api.internetshoppet.ru';
 
 interface userTypes{
     name: String;
